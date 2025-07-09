@@ -12,35 +12,10 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-secondary/10"></div>
       
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center min-h-[80vh]">
+        <div className="flex items-center justify-center min-h-[80vh]">
           
-          {/* Left side - Introduction text */}
-          <div className="lg:col-span-1 text-left space-y-6 animate-fade-in">
-            <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light mb-4">
-                <span className="text-foreground">My Self,</span>
-              </h1>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary mb-6">
-                Rob Oliver
-              </h2>
-            </div>
-            
-            <p className="text-muted-foreground text-lg max-w-md leading-relaxed">
-              Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been the industry's.
-            </p>
-            
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="mt-8 min-w-[160px] border-muted-foreground/30 hover:border-primary"
-            >
-              <Download className="w-4 h-4 mr-2" />
-              Download CV
-            </Button>
-          </div>
-
-          {/* Center - Profile Image */}
-          <div className="lg:col-span-1 flex justify-center animate-fade-in">
+          {/* Center - Profile Image with overlaid text */}
+          <div className="flex justify-center animate-fade-in">
             <div 
               className="relative cursor-pointer group"
               onClick={() => setIsColorMode(!isColorMode)}
@@ -57,23 +32,49 @@ export function Hero() {
                 />
               </div>
               
+              {/* Name at top left corner */}
+              <div className="absolute top-4 left-4 text-left">
+                <h1 className="text-2xl sm:text-3xl font-light mb-1">
+                  <span className="text-white drop-shadow-lg">My Self,</span>
+                </h1>
+                <h2 className="text-2xl sm:text-3xl font-bold text-primary drop-shadow-lg">
+                  Rob Oliver
+                </h2>
+              </div>
+
+              {/* Role at bottom right corner */}
+              <div className="absolute bottom-4 right-4 text-right">
+                <div className="space-y-1">
+                  <p className="text-white text-lg sm:text-xl font-light drop-shadow-lg">
+                    I am a
+                  </p>
+                  <h3 className="text-primary text-lg sm:text-xl font-bold relative drop-shadow-lg">
+                    Engineer
+                    <div className="absolute -bottom-1 right-0 w-16 h-0.5 bg-primary rounded-full"></div>
+                  </h3>
+                </div>
+              </div>
+              
               {/* Subtle hover effect */}
               <div className="absolute inset-0 rounded-3xl bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           </div>
+        </div>
 
-          {/* Right side - Role/Title */}
-          <div className="lg:col-span-1 text-left lg:text-left space-y-4 animate-fade-in">
-            <div className="space-y-2">
-              <p className="text-foreground text-2xl sm:text-3xl lg:text-4xl font-light">
-                I am a
-              </p>
-              <h3 className="text-primary text-2xl sm:text-3xl lg:text-4xl font-bold relative">
-                Engineer
-                <div className="absolute -bottom-2 left-0 w-20 h-1 bg-primary rounded-full"></div>
-              </h3>
-            </div>
-          </div>
+        {/* Description and Download button below the image */}
+        <div className="flex flex-col items-center space-y-6 animate-fade-in mt-8">
+          <p className="text-muted-foreground text-lg max-w-md leading-relaxed text-center">
+            Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been the industry's.
+          </p>
+          
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="min-w-[160px] border-muted-foreground/30 hover:border-primary"
+          >
+            <Download className="w-4 h-4 mr-2" />
+            Download CV
+          </Button>
         </div>
 
         {/* Bottom scroll indicator */}
