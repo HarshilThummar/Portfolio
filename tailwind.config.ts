@@ -1,23 +1,5 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ["Poppins", "sans-serif"]
-      },
-      colors: {
-        primary: "#0b0c2a",
-        accent: "#ff6e6e",
-        textLight: "#b1b1d1",
-        engineer: "#7e6fff"
-      }
-    }
-  },
-  plugins: []
-};
-
 export default {
 	darkMode: ["class"],
 	content: [

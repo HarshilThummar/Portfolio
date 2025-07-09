@@ -1,35 +1,48 @@
-import React from "react";
 
-export default function Hero() {
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+export function Hero() {
   return (
-    <section className="bg-[#0b0c2a] min-h-screen flex items-center justify-center text-white px-4">
-      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12">
-        {/* Left Text Section */}
-        <div className="flex-1 text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-            My Self, <br />
-            <span className="text-[#ff6e6e]">Rob Oliver</span>
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/20"></div>
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
+            <span className="text-primary">John</span> Doe
           </h1>
-          <p className="text-[#b1b1d1] mt-6 max-w-md">
-            Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been the industry's.
+          <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-8 animate-fade-in">
+            Full Stack Developer & UI/UX Designer
           </p>
-          <button className="mt-6 px-6 py-2 border border-white rounded-full hover:bg-white hover:text-[#0b0c2a] transition">
-            Download CV
-          </button>
-        </div>
-
-        {/* Right Image Card Section */}
-        <div className="flex-1 flex flex-col items-center">
-          <div className="bg-white p-4 rounded-lg shadow-lg grayscale w-[250px] md:w-[300px]">
-            <img
-              src="/profile.png"
-              alt="Rob Oliver"
-              className="rounded-lg w-full object-cover"
-            />
+          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in">
+            Passionate about creating beautiful, functional, and user-centered digital experiences.
+            Let's build something amazing together.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in">
+            <Button size="lg" className="min-w-[150px]">
+              View My Work
+            </Button>
+            <Button variant="outline" size="lg" className="min-w-[150px]">
+              Get In Touch
+            </Button>
           </div>
-          <p className="mt-4 text-lg">
-            I am a <span className="text-[#7e6fff] underline">Engineer</span>
-          </p>
+
+          <div className="flex justify-center space-x-6 mb-12 animate-fade-in">
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Github className="h-6 w-6" />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Linkedin className="h-6 w-6" />
+            </a>
+            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Mail className="h-6 w-6" />
+            </a>
+          </div>
+
+          <div className="animate-bounce">
+            <ArrowDown className="h-8 w-8 mx-auto text-primary" />
+          </div>
         </div>
       </div>
     </section>
