@@ -1,49 +1,53 @@
-
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image"; // Or use <img> if not using Next.js
 
 export function Hero() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/20"></div>
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
-            <span className="text-primary">John</span> Doe
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center bg-darkbg text-white font-poppins relative px-4"
+    >
+      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-12">
+        {/* Left Section */}
+        <div className="flex-1 text-center md:text-left">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+            My Self, <br />
+            <span className="text-rob">Rob Oliver</span>
           </h1>
-          <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-8 animate-fade-in">
-            Full Stack Developer & UI/UX Designer
+          <p className="text-textlight mt-6 max-w-md mx-auto md:mx-0">
+            Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been the industry's.
           </p>
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto animate-fade-in">
-            Passionate about creating beautiful, functional, and user-centered digital experiences.
-            Let's build something amazing together.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in">
-            <Button size="lg" className="min-w-[150px]">
-              View My Work
-            </Button>
-            <Button variant="outline" size="lg" className="min-w-[150px]">
-              Get In Touch
-            </Button>
-          </div>
-
-          <div className="flex justify-center space-x-6 mb-12 animate-fade-in">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Github className="h-6 w-6" />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Linkedin className="h-6 w-6" />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Mail className="h-6 w-6" />
-            </a>
-          </div>
-
-          <div className="animate-bounce">
-            <ArrowDown className="h-8 w-8 mx-auto text-primary" />
-          </div>
+          <Button
+            variant="outline"
+            size="lg"
+            className="mt-6 text-white border-white hover:bg-white hover:text-darkbg transition"
+          >
+            Download CV
+          </Button>
         </div>
+
+        {/* Right Section */}
+        <div className="flex-1 flex flex-col items-center">
+          <div className="bg-white p-4 rounded-lg shadow-lg grayscale w-[250px] md:w-[300px]">
+            {/* Image path — replace with your actual image */}
+            <Image
+              src="/profile.png"
+              alt="Rob Oliver"
+              width={300}
+              height={400}
+              className="rounded-lg w-full object-cover"
+            />
+          </div>
+          <p className="mt-4 text-lg">
+            I am a <span className="text-engineer underline">Engineer</span>
+          </p>
+        </div>
+      </div>
+
+      {/* Optional Scroll Down Arrow */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce">
+        <ArrowDown className="h-8 w-8 text-white" />
       </div>
     </section>
   );
